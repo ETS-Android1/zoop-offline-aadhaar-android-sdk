@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/colorBluePrimary</color>
+    <color name="colorPrimaryDark">@color/colorBluePrimaryDark</color>
+    <color name="colorAccent">@color/colorBlueAccent</color>
+
+    <!--Blue color pallated-->
+    <color name="colorBluePrimaryDark">#1f768a</color>
+    <color name="colorBluePrimary">#58a4b5</color>
+    <color name="colorBluesecondary">#ededed</color>
+    <color name="colorBlueAccent">#fa7e5c</color>
+
+    <color name="green">#99cc00</color>
+    <color name="orange">#ffbb33</color>
+    <color name="orangeDark">#ff8800</color>
+    <color name="red">#cc0000</color>
+    <color name="greenDark">#669900</color>
+</resources>

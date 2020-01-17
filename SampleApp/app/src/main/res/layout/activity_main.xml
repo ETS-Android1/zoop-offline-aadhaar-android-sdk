@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBluesecondary"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <ScrollView
+        android:id="@+id/svResultLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/btnInitXMLKYC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/ResultDisplayLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/llBackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@color/colorPrimary"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/zoop_margin">
+
+                    <TextView
+                        android:id="@+id/tvtransactionState"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="@dimen/zoop_margin"
+                        android:layout_marginTop="@dimen/zoop_margin"
+                        android:layout_marginEnd="@dimen/zoop_margin"
+                        android:layout_marginBottom="@dimen/zoop_margin"
+                        android:gravity="center"
+                        android:padding="@dimen/zoop_padding_small_half"
+                        android:text="Transaction Successfull"
+                        android:textColor="@color/zoopDtPrimaryDark"
+                        android:textSize="@dimen/zoop_title_text"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvResultTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvtransactionState"
+                        android:layout_alignParentTop="false"
+                        android:layout_marginStart="@dimen/zoop_margin"
+                        android:layout_marginTop="@dimen/zoop_padding_small_half"
+                        android:layout_marginEnd="@dimen/zoop_margin"
+                        android:layout_marginBottom="@dimen/zoop_margin"
+                        android:paddingStart="@dimen/zoop_padding_small"
+                        android:paddingEnd="@dimen/zoop_padding_small"
+                        android:text="e-KYC Result"
+                        android:textColor="@color/zoopDtPrimaryDark"
+                        android:textSize="@dimen/zoop_normal_text"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/llEkycInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvResultTitle"
+                        android:layout_marginBottom="70dp"
+                        android:orientation="vertical">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/zoop_margin_small"
+                                    android:layout_marginEnd="@dimen/zoop_margin_small"
+                                    android:orientation="horizontal"
+                                    android:paddingTop="@dimen/zoop_padding_small"
+                                    android:paddingBottom="@dimen/zoop_padding_small">
+
+                                    <ImageView
+                                        android:id="@+id/ivEkycFace"
+                                        android:layout_width="70dp"
+                                        android:layout_height="110dp"
+                                        android:layout_weight="1"
+                                        android:src="@mipmap/ic_loading" />
+
+                                    <ImageView
+                                        android:id="@+id/ivCapturedFace"
+                                        android:layout_width="70dp"
+                                        android:layout_height="110dp"
+                                        android:layout_weight="1"
+                                        android:src="@mipmap/ic_loading"
+                                        android:visibility="visible" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/llFMScore"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dp"
+                                    android:background="@color/zoopWhite"
+                                    android:orientation="vertical"
+                                    android:paddingStart="@dimen/zoop_padding_small"
+                                    android:paddingTop="@dimen/zoop_padding_small_half"
+                                    android:paddingEnd="@dimen/zoop_padding_small"
+                                    android:paddingBottom="@dimen/zoop_padding_small_half"
+                                    android:visibility="visible">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Face Match Score:" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/zoop_margin"
+                                            android:layout_marginTop="@dimen/zoop_margin_small"
+                                            android:layout_marginEnd="@dimen/zoop_margin"
+                                            android:text="FaceMatch Result: "
+                                            android:textColor="@color/zoopDtPrimaryDark"
+                                            android:textSize="@dimen/zoop_normal_text" />
+
+                                        <TextView
+                                            android:id="@+id/tvFaceMatchScore"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/zoop_margin_small"
+                                            android:layout_marginEnd="@dimen/zoop_margin"
+                                            android:text="Loading..."
+                                            android:textColor="@color/zoopDtPrimaryDark"
+                                            android:textSize="@dimen/zoop_normal_text" />
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dp"
+                                    android:background="@color/zoopWhite"
+                                    android:orientation="vertical"
+                                    android:paddingStart="@dimen/zoop_padding_small"
+                                    android:paddingTop="@dimen/zoop_padding_small_half"
+                                    android:paddingEnd="@dimen/zoop_padding_small"
+                                    android:paddingBottom="@dimen/zoop_padding_small_half">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Aadhaar Number:" />
+
+                                    <TextView
+                                        android:id="@+id/tvAadhaarNumber"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/zoop_margin"
+                                        android:layout_marginTop="@dimen/zoop_margin_small"
+                                        android:layout_marginEnd="@dimen/zoop_margin"
+                                        android:text="Loading..."
+                                        android:textColor="@color/zoopDtPrimaryDark"
+                                        android:textSize="@dimen/zoop_normal_text" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dp"
+                                    android:background="@color/zoopWhite"
+                                    android:orientation="vertical"
+                                    android:paddingStart="@dimen/zoop_padding_small"
+                                    android:paddingTop="@dimen/zoop_padding_small_half"
+                                    android:paddingEnd="@dimen/zoop_padding_small"
+                                    android:paddingBottom="@dimen/zoop_padding_small_half">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Name: " />
+
+                                    <TextView
+                                        android:id="@+id/tvName"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/zoop_margin"
+                                        android:layout_marginTop="@dimen/zoop_margin_small"
+                                        android:layout_marginEnd="@dimen/zoop_margin"
+                                        android:text="Loading..."
+                                        android:textColor="@color/zoopDtPrimaryDark"
+                                        android:textSize="@dimen/zoop_normal_text" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dp"
+                                    android:background="@color/zoopWhite"
+                                    android:orientation="vertical"
+                                    android:paddingStart="@dimen/zoop_padding_small"
+                                    android:paddingTop="@dimen/zoop_padding_small_half"
+                                    android:paddingEnd="@dimen/zoop_padding_small"
+                                    android:paddingBottom="@dimen/zoop_padding_small_half">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Date of Birth:" />
+
+                                    <TextView
+                                        android:id="@+id/tvDob"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/zoop_margin"
+                                        android:layout_marginTop="@dimen/zoop_margin_small"
+                                        android:layout_marginEnd="@dimen/zoop_margin"
+                                        android:text="Loading..."
+                                        android:textColor="@color/zoopDtPrimaryDark"
+                                        android:textSize="@dimen/zoop_normal_text" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dp"
+                                    android:background="@color/zoopWhite"
+                                    android:orientation="vertical"
+                                    android:paddingStart="@dimen/zoop_padding_small"
+                                    android:paddingTop="@dimen/zoop_padding_small_half"
+                                    android:paddingEnd="@dimen/zoop_padding_small"
+                                    android:paddingBottom="@dimen/zoop_padding_small_half">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Gender:" />
+
+                                    <TextView
+                                        android:id="@+id/tvGender"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/zoop_margin"
+                                        android:layout_marginTop="@dimen/zoop_margin_small"
+                                        android:layout_marginEnd="@dimen/zoop_margin"
+                                        android:text="Loading..."
+                                        android:textColor="@color/zoopDtPrimaryDark"
+                                        android:textSize="@dimen/zoop_normal_text" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dp"
+                                    android:background="@color/zoopWhite"
+                                    android:orientation="vertical"
+                                    android:paddingStart="@dimen/zoop_padding_small"
+                                    android:paddingTop="@dimen/zoop_padding_small_half"
+                                    android:paddingEnd="@dimen/zoop_padding_small"
+                                    android:paddingBottom="@dimen/zoop_padding_small_half">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Address:" />
+
+                                    <TextView
+                                        android:id="@+id/tvAddress"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/zoop_margin"
+                                        android:layout_marginTop="@dimen/zoop_margin_small"
+                                        android:layout_marginEnd="@dimen/zoop_margin"
+                                        android:text="Loading..."
+                                        android:textColor="@color/zoopDtPrimaryDark"
+                                        android:textSize="@dimen/zoop_normal_text" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/llEmailStatus"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dp"
+                                    android:background="@color/zoopWhite"
+                                    android:orientation="vertical"
+                                    android:paddingStart="@dimen/zoop_padding_small"
+                                    android:paddingTop="@dimen/zoop_padding_small_half"
+                                    android:paddingEnd="@dimen/zoop_padding_small"
+                                    android:paddingBottom="@dimen/zoop_padding_small_half"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Email Status" />
+
+                                    <TextView
+                                        android:id="@+id/tvEmailStatus"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/zoop_margin"
+                                        android:layout_marginTop="@dimen/zoop_margin_small"
+                                        android:layout_marginEnd="@dimen/zoop_margin"
+                                        android:text="Loading..."
+                                        android:textColor="@color/zoopDtPrimaryDark"
+                                        android:textSize="@dimen/zoop_normal_text" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/llPhoneStatus"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dp"
+                                    android:background="@color/zoopWhite"
+                                    android:orientation="vertical"
+                                    android:paddingStart="@dimen/zoop_padding_small"
+                                    android:paddingTop="@dimen/zoop_padding_small_half"
+                                    android:paddingEnd="@dimen/zoop_padding_small"
+                                    android:paddingBottom="@dimen/zoop_padding_small_half"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Phone Status:" />
+
+                                    <TextView
+                                        android:id="@+id/tvPhoneStatus"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/zoop_margin"
+                                        android:layout_marginTop="@dimen/zoop_margin_small"
+                                        android:layout_marginEnd="@dimen/zoop_margin"
+                                        android:text="Loading..."
+                                        android:textColor="@color/zoopDtPrimaryDark"
+                                        android:textSize="@dimen/zoop_normal_text" />
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:id="@+id/llDetailedAddress"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="1dp"
+                                    android:background="@color/zoopWhite"
+                                    android:orientation="vertical"
+                                    android:paddingStart="@dimen/zoop_padding_small"
+                                    android:paddingTop="@dimen/zoop_padding_small_half"
+                                    android:paddingEnd="@dimen/zoop_padding_small"
+                                    android:paddingBottom="@dimen/zoop_padding_small_half"
+                                    android:visibility="visible">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Detailed Address:" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/tvHouse"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/zoop_margin"
+                                            android:layout_marginTop="@dimen/zoop_margin_small"
+                                            android:layout_marginEnd="@dimen/zoop_margin"
+                                            android:text="Loading..."
+                                            android:textColor="@color/zoopDtPrimaryDark"
+                                            android:textSize="@dimen/zoop_normal_text"
+                                            android:visibility="gone" />
+
+                                        <TextView
+                                            android:id="@+id/tvStreet"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/zoop_margin"
+                                            android:layout_marginTop="@dimen/zoop_margin_small"
+                                            android:layout_marginEnd="@dimen/zoop_margin"
+                                            android:text="Loading..."
+                                            android:textColor="@color/zoopDtPrimaryDark"
+                                            android:textSize="@dimen/zoop_normal_text"
+                                            android:visibility="gone" />
+
+                                        <TextView
+                                            android:id="@+id/tvLocality"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/zoop_margin"
+                                            android:layout_marginTop="@dimen/zoop_margin_small"
+                                            android:layout_marginEnd="@dimen/zoop_margin"
+                                            android:text="Loading..."
+                                            android:textColor="@color/zoopDtPrimaryDark"
+                                            android:textSize="@dimen/zoop_normal_text"
+                                            android:visibility="gone" />
+
+                                        <TextView
+                                            android:id="@+id/tvPostOffice"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/zoop_margin"
+                                            android:layout_marginTop="@dimen/zoop_margin_small"
+                                            android:layout_marginEnd="@dimen/zoop_margin"
+                                            android:text="Loading..."
+                                            android:textColor="@color/zoopDtPrimaryDark"
+                                            android:textSize="@dimen/zoop_normal_text"
+                                            android:visibility="gone" />
+
+                                        <TextView
+                                            android:id="@+id/tvDistrict"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/zoop_margin"
+                                            android:layout_marginTop="@dimen/zoop_margin_small"
+                                            android:layout_marginEnd="@dimen/zoop_margin"
+                                            android:text="Loading..."
+                                            android:textColor="@color/zoopDtPrimaryDark"
+                                            android:textSize="@dimen/zoop_normal_text"
+                                            android:visibility="gone" />
+
+                                        <TextView
+                                            android:id="@+id/tvState"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/zoop_margin"
+                                            android:layout_marginTop="@dimen/zoop_margin_small"
+                                            android:layout_marginEnd="@dimen/zoop_margin"
+                                            android:text="Loading..."
+                                            android:textColor="@color/zoopDtPrimaryDark"
+                                            android:textSize="@dimen/zoop_normal_text"
+                                            android:visibility="gone" />
+
+                                        <TextView
+                                            android:id="@+id/tvPostalCode"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="@dimen/zoop_margin"
+                                            android:layout_marginTop="@dimen/zoop_margin_small"
+                                            android:layout_marginEnd="@dimen/zoop_margin"
+                                            android:text="Loading..."
+                                            android:textColor="@color/zoopDtPrimaryDark"
+                                            android:textSize="@dimen/zoop_normal_text"
+                                            android:visibility="gone" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+                        </ScrollView>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnDone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="@dimen/zoop_margin"
+                        android:layout_marginTop="@dimen/zoop_margin"
+                        android:layout_marginEnd="@dimen/zoop_margin"
+                        android:layout_marginBottom="@dimen/zoop_margin"
+                        android:background="@color/zoopDtPrimaryDark"
+                        android:text="Done"
+                        android:textColor="@color/zoopWhite"
+                        android:textSize="@dimen/zoop_button_text"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Press Open SDK for transaction to init"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/btnInitXMLKYC"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/llInitLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/llLoaderView">
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:drawableEnd="@drawable/ic_mail_outline_black_24dp"
+            android:drawablePadding="15dp"
+            android:ems="10"
+            android:hint="Enter Email Id"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:textSize="21sp" />
+
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:drawableEnd="@drawable/ic_phone_iphone_black_24dp"
+            android:drawablePadding="15dp"
+            android:ems="10"
+            android:hint="Enter Mobile Number"
+            android:inputType="phone"
+            android:padding="10dp"
+            android:textSize="21sp" />
+
+        <EditText
+            android:id="@+id/etUID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:drawableEnd="@drawable/ic_fingerprint_black_24dp"
+            android:drawablePadding="15dp"
+            android:ems="10"
+            android:hint="Enter Aadhaar Number"
+            android:inputType="phone"
+            android:padding="10dp"
+            android:textSize="21sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnInitXMLKYC"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Open SDK"
+        android:textColor="@color/zoopWhite"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llLoaderView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:alpha="0.8"
+        android:background="@color/zoopWhite"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar3"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
