@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<paths>-->
+    <!--<external-files-path-->
+            <!--name="Pictures"-->
+            <!--path="Pictures"/>-->
+    <!--&lt;!&ndash;<external-path&ndash;&gt;-->
+    <!--&lt;!&ndash;name="files_root"&ndash;&gt;-->
+    <!--&lt;!&ndash;path="Android/data/sdk.aadhaarapi.com.offline_aadhaar/" />&ndash;&gt;-->
+    <!--<external-path-->
+            <!--name="external_storage_root"-->
+            <!--path="."/>-->
+<!--</paths>-->
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+<external-path name="external_files" path="."/>
+</paths>

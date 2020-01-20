@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "127178512444",
+    "firebase_url": "https://zoop-mobile.firebaseio.com",
+    "project_id": "zoop-mobile",
+    "storage_bucket": "zoop-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127178512444:android:2b6f730e86ad5b719f0b39",
+        "android_client_info": {
+          "package_name": "offlineaadhaarbuilder.sdk.zoop.one.offlineaadhaarbuilder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "127178512444-fhtp4cgni323580lniivcqmp2a1cqh6h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqfW4J2oSjYzbyJz90D3ptyhLrTvo_PbA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "127178512444-fhtp4cgni323580lniivcqmp2a1cqh6h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127178512444:android:6a3436135dfbcfa99f0b39",
+        "android_client_info": {
+          "package_name": "one.zoop.gatewaysdk.sampleapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "127178512444-fhtp4cgni323580lniivcqmp2a1cqh6h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqfW4J2oSjYzbyJz90D3ptyhLrTvo_PbA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "127178512444-fhtp4cgni323580lniivcqmp2a1cqh6h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
