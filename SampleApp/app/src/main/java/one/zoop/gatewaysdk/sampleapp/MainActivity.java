@@ -96,9 +96,9 @@ public class MainActivity extends AppCompatActivity {
                 if (llInitLayout.getVisibility() == View.VISIBLE) {
                     env = "preprod.aadhaarapi.com";
                     Intent gatewayIntent = new Intent(MainActivity.this, ZoopConsentActivity.class);
-                    gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "222c21aa-2fff-4ec6-94cb-04d68174324a");
-                    gatewayIntent.putExtra(ZOOP_ENV, "preprod.aadhaarapi.com");
-//                    gatewayIntent.putExtra(ZOOP_EMAIL, email); //not mandatory
+                    gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "f61e0aaf-9050-41df-8d57-adb6cf84065a");
+                    gatewayIntent.putExtra(ZOOP_ENV, env);
+                    gatewayIntent.putExtra(ZOOP_EMAIL, "divyankvijay.96@gmail.com"); //not mandatory
 //                    gatewayIntent.putExtra(ZOOP_UID, uid); //not mandatory
                     gatewayIntent.putExtra(ZOOP_PHONE, "8087337240"); //not mandatory
                     gatewayIntent.putExtra(ZOOP_REQUEST_TYPE, OFFLINE_AADHAAR);
@@ -161,7 +161,6 @@ public class MainActivity extends AppCompatActivity {
                 //String responseString1 = data.getStringExtra(ZOOP_RESULT);
                 if (resultCode == OFFLINE_AADHAAR_SUCCESS) {
                     String responseString = data.getStringExtra(ZOOP_RESULT);
-                    //handle success for credit_score
                     tvResult.setVisibility(View.VISIBLE);
                     resultDisplayLayout.setVisibility(View.VISIBLE);
                     llResultBg.setVisibility(View.VISIBLE);
@@ -178,7 +177,6 @@ public class MainActivity extends AppCompatActivity {
 
                 if (resultCode == OFFLINE_AADHAAR_ERROR) {
                     String errorString = data.getStringExtra(ZOOP_RESULT);
-                    //handle error for credit_Score
                     // tvResult.setText(errorString);
                     tvResult.setVisibility(View.VISIBLE);
                     resultDisplayLayout.setVisibility(View.GONE);

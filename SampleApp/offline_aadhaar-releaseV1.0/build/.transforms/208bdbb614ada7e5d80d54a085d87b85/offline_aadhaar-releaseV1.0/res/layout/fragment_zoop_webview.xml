@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                tools:context=".zoopActivity.ZoopKycActivity">
+
+    <ProgressBar
+            android:id="@+id/awv_progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:indeterminate="true" android:visibility="gone"/>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_below="@+id/awv_progressBar"
+            android:background="@color/zoopWhite">
+
+        <WebView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/wvUidaiOfflineKyc" android:background="@android:color/white">
+        </WebView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:gravity="center" android:background="@color/zoopWhite"
+            android:alpha="0.8" android:visibility="gone" android:id="@+id/llWebViewLoader">
+        <ProgressBar
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBar"/>
+        <TextView
+                android:text="@string/loader_wv_init_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/tvWebviewLoadingMsg"
+                android:layout_margin="@dimen/zoop_margin" android:padding="@dimen/zoop_padding"
+                android:gravity="center"
+                android:textColor="@color/zoopDtPrimaryDark" android:textSize="@dimen/zoop_heading_text"/>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="zoop_button_text">20sp</dimen>
+    <dimen name="zoop_heading_text">20sp</dimen>
+    <dimen name="zoop_image_height">120dp</dimen>
+    <dimen name="zoop_image_width">80dp</dimen>
+    <dimen name="zoop_margin">25dp</dimen>
+    <dimen name="zoop_margin_large">30dp</dimen>
+    <dimen name="zoop_margin_small">20dp</dimen>
+    <dimen name="zoop_margin_very_small">15dp</dimen>
+    <dimen name="zoop_normal_text">20sp</dimen>
+    <dimen name="zoop_padding">25dp</dimen>
+    <dimen name="zoop_padding_small">20dp</dimen>
+    <dimen name="zoop_padding_small_half">10dp</dimen>
+    <dimen name="zoop_small_text">18sp</dimen>
+    <dimen name="zoop_timer_text">26sp</dimen>
+    <dimen name="zoop_title_text">22sp</dimen>
+</resources>

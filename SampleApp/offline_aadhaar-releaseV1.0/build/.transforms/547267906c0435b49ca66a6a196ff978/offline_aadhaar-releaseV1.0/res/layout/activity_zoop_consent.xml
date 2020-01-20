@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".zoopActivity.ZoopConsentActivity">
+
+    <WebView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:id="@+id/wvUidaiPreview" android:alpha="0.3"
+            android:layout_alignParentStart="true" android:layout_alignParentTop="true">
+    </WebView>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/zoopBlack"
+            android:alpha="0.6"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
+    </LinearLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_margin="@dimen/zoop_margin">
+
+        <TextView
+                android:text="@string/zoopConsent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:id="@+id/tvConsentTitle"
+                android:textSize="@dimen/zoop_title_text"
+                android:layout_marginTop="@dimen/zoop_margin_large"
+                android:layout_marginStart="@dimen/zoop_margin_small"
+                android:layout_marginEnd="@dimen/zoop_margin_small"
+                android:layout_marginBottom="@dimen/zoop_margin"
+                android:textStyle="bold" android:textAlignment="center" android:gravity="center"
+                android:textColor="@color/zoopWhite"/>
+        <TextView
+                android:text="@string/zoopConsentInstr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/tvConsentInstr"
+                android:textSize="@dimen/zoop_heading_text"
+                android:layout_below="@+id/tvConsentTitle"
+                android:layout_marginTop="@dimen/zoop_margin_small"
+                android:layout_marginStart="@dimen/zoop_margin_small"
+                android:layout_marginEnd="@dimen/zoop_margin_small"
+                android:layout_marginBottom="@dimen/zoop_margin_small"
+                android:padding="@dimen/zoop_padding_small_half"
+                android:textColor="@color/zoopWhite"/>
+        <Button
+                android:text="@string/zoopProceedAssistMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnProceedAssistmode"
+                android:textSize="@dimen/zoop_button_text"
+                android:layout_above="@+id/btnProceedWebviewMode"
+                android:layout_margin="@dimen/zoop_margin"
+                android:padding="@dimen/zoop_padding_small"
+                android:textColor="@color/zoopWhite"
+                android:textAllCaps="false"
+                android:background="@color/colorPrimaryDark"/>
+        <Button
+                android:text="@string/zoopProceedWebviewMode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnProceedWebviewMode"
+                android:layout_alignParentBottom="true"
+                android:padding="@dimen/zoop_padding_small"
+                android:background="@color/zoopWhite"
+                android:layout_marginStart="@dimen/zoop_margin"
+                android:layout_marginEnd="@dimen/zoop_margin"
+                android:layout_marginBottom="@dimen/zoop_margin"
+                android:textSize="@dimen/zoop_button_text"
+                android:textAllCaps="false"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:gravity="center" android:background="@color/zoopWhite"
+            android:alpha="0.8" android:visibility="gone" android:id="@+id/llConsentLoader">
+        <ProgressBar
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+        />
+        <TextView
+                android:text="Redirecting to UIDAI portal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/tvConsentViewLoadingMsg"
+                android:layout_margin="@dimen/zoop_margin" android:padding="@dimen/zoop_padding"
+                android:gravity="center"
+                android:textColor="@color/zoopDtPrimaryDark" android:textSize="@dimen/zoop_heading_text"/>
+    </LinearLayout>
+</RelativeLayout>
