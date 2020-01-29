@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 if (llInitLayout.getVisibility() == View.VISIBLE) {
                     env = "preprod.aadhaarapi.com";
                     Intent gatewayIntent = new Intent(MainActivity.this, ZoopConsentActivity.class);
-                    gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "222c21aa-2fff-4ec6-94cb-04d68174324a");
+                    gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "8dcd608e-2250-42cb-86bf-fc754721702d");
                     gatewayIntent.putExtra(ZOOP_ENV, "preprod.aadhaarapi.com");
 //                    gatewayIntent.putExtra(ZOOP_EMAIL, email); //not mandatory
 //                    gatewayIntent.putExtra(ZOOP_UID, uid); //not mandatory
