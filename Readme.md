@@ -140,7 +140,7 @@ Use the Intent Function to call the Offline Aadhaar SDK from your Activity as sh
     String GatewayId, Email, environment, phone;
     Intent gatewayIntent = new Intent(MainActivity.this, ZoopConsentActivity.class);
     gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "222c21aa-2fff-4ec6-94cb-04d68174324a");
-    gatewayIntent.putExtra(ZOOP_ENV, env);
+    gatewayIntent.putExtra(ZOOP_ENV, environment);
     gatewayIntent.putExtra(ZOOP_EMAIL, Email); //not mandatory
     //gatewayIntent.putExtra(ZOOP_UID, uid); //not mandatory
     gatewayIntent.putExtra(ZOOP_PHONE, phone); //not mandatory
