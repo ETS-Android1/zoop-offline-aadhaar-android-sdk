@@ -100,6 +100,40 @@ Import following files in your Activity:
         implementation 'com.android.volley:volley:1.1.0'
     }
     
+### 5.4 MANIFEST FILE
+
+     <?xml version="1.0" encoding="utf-8"?>
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        package="one.zoop.gatewaysdk.sampleapp">
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+        <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+            <activity android:name=".MainActivity">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+            </activity>
+            <provider
+                android:name="android.support.v4.content.FileProvider"
+                android:authorities="sdk.zoop.one.offline_aadhaar"
+                android:exported="false"
+                android:grantUriPermissions="true">
+                <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/provider_paths" />
+            </provider>
+        </application>
+
+    </manifest>
+    
 ### 5.3 CALL OFFLINE AADHAAR SDK FROM THE ACTIVITY
 Use the Intent Function to call the Offline Aadhaar SDK from your Activity as shown below:
 
