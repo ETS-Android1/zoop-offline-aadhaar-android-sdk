@@ -25,6 +25,7 @@ import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.OFFLINE_A
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.OFFLINE_AADHAAR_ERROR;
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.OFFLINE_AADHAAR_SUCCESS;
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.REQUEST_AADHAARAPI;
+import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_BASE_URL;
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_EMAIL;
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_ENV;
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_PHONE;
@@ -96,8 +97,8 @@ public class MainActivity extends AppCompatActivity {
                 if (llInitLayout.getVisibility() == View.VISIBLE) {
                     env = "preprod.aadhaarapi.com";
                     Intent gatewayIntent = new Intent(MainActivity.this, ZoopConsentActivity.class);
-                    gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "f6091e2e-bb58-4365-b7b9-6af36fbe6f7c");
-                    gatewayIntent.putExtra(ZOOP_ENV, "preprod.aadhaarapi.com");
+                    gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "b54de467-39cb-4e9e-9a73-3025b0231687");
+                    gatewayIntent.putExtra(ZOOP_BASE_URL, "preprod.aadhaarapi.com");
 //                    gatewayIntent.putExtra(ZOOP_EMAIL, email); //not mandatory
 //                    gatewayIntent.putExtra(ZOOP_UID, uid); //not mandatory
                     gatewayIntent.putExtra(ZOOP_PHONE, "8087337240"); //not mandatory
