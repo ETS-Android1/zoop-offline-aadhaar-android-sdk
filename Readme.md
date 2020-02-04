@@ -137,10 +137,10 @@ Import following files in your Activity:
 ### 5.4 CALL OFFLINE AADHAAR SDK FROM THE ACTIVITY
 Use the Intent Function to call the Offline Aadhaar SDK from your Activity as shown below:
 
-    String GatewayId, Email, environment, phone;
+    String GatewayId, Email, baseUrl, phone;
     Intent gatewayIntent = new Intent(MainActivity.this, ZoopConsentActivity.class);
     gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "222c21aa-2fff-4ec6-94cb-04d68174324a");
-    gatewayIntent.putExtra(ZOOP_ENV, env);
+    gatewayIntent.putExtra(ZOOP_BASE_URL, baseUrl);
     gatewayIntent.putExtra(ZOOP_EMAIL, Email); //not mandatory
     //gatewayIntent.putExtra(ZOOP_UID, uid); //not mandatory
     gatewayIntent.putExtra(ZOOP_PHONE, phone); //not mandatory
@@ -158,7 +158,7 @@ GatewayId = "a051231e-ddc7-449d-8635-bb823485a20d";
 
 Email = “youremail@gmail.com";
 
-environment = "preprod.aadhaarapi.com";
+baseUrl = "preprod.aadhaarapi.com";
 
 ### 5.5 HANDLE SDK RESPONSE
 
