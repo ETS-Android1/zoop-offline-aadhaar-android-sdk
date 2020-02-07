@@ -223,6 +223,15 @@ The responses incase of successful transaction as well as response in case of er
         }
     }
     
+ ### 5.6 STRINGS.XML FILE
+ 
+ The instructions message can be modify from strings.xml file 
+ 
+    <string name="zoopTimerInstr">waiting for OTP confirmation</string>
+    <string name="zoopTimerInstrShare">waiting for OTP confirmation before please enter share code</string>
+    <string name="tv_timer_finish">OTP wait time finished</string>
+    
+    
  ## 6. RESPONSE FORMAT SENT ON MOBILE  
  
  ### 6.1 SUCCESS JSON RESPONSE FORMAT FOR OFFLINE AADHAAR SUCCESS
