@@ -85,6 +85,7 @@ Import following files in your Activity:
     import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_TAG;
     import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_TRANSACTION_ID;
     import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_UID;
+    import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_IS_SHARE_CODE_PREFILL;
 
 ### 5.2 BUILD GRADLE(app)
 
@@ -137,13 +138,15 @@ Import following files in your Activity:
 ### 5.4 CALL OFFLINE AADHAAR SDK FROM THE ACTIVITY
 Use the Intent Function to call the Offline Aadhaar SDK from your Activity as shown below:
 
-    String GatewayId, Email, baseUrl, phone;
+    String GatewayId, Email, baseUrl, phone
+    boolean isShareCodePreFill;
     Intent gatewayIntent = new Intent(MainActivity.this, ZoopConsentActivity.class);
     gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "222c21aa-2fff-4ec6-94cb-04d68174324a");
     gatewayIntent.putExtra(ZOOP_BASE_URL, baseUrl);
     gatewayIntent.putExtra(ZOOP_EMAIL, Email); //not mandatory
     //gatewayIntent.putExtra(ZOOP_UID, uid); //not mandatory
     gatewayIntent.putExtra(ZOOP_PHONE, phone); //not mandatory
+    gatewayIntent.putExtra(ZOOP_IS_SHARE_CODE_PREFILL, isShareCodePreFill); //not mandatory
     gatewayIntent.putExtra(ZOOP_REQUEST_TYPE, OFFLINE_AADHAAR);
     startActivityForResult(gatewayIntent, REQUEST_AADHAARAPI);
     
@@ -151,6 +154,8 @@ Use the Intent Function to call the Offline Aadhaar SDK from your Activity as sh
 Params: GatewayId: “Transaction Id generated from your backend must be passed here”
 
 environment: for pre-prod use "preprod.aadhaarapi.com" and for prod use "prod.aadhaarapi.com"
+
+isShareCodePreFill: if it is true then 4-digit share code will be filled randomly otherwise you need to fill it manually.
 
 Example:
 
