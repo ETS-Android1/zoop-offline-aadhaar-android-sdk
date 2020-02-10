@@ -99,6 +99,8 @@ Import following files in your Activity:
         implementation 'com.android.support:cardview-v7:28.0.0'
         implementation project(':offline_aadhaar-releaseV1.0')
         implementation 'com.android.volley:volley:1.1.0'
+        implementation 'io.sentry:sentry-android:1.7.27'   //COPY SENTRY TO LOG ERROR MESSAGES
+
     }
     
 ### 5.3 MANIFEST FILE
