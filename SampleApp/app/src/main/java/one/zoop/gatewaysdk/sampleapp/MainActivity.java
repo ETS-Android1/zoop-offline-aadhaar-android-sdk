@@ -3,7 +3,9 @@ package one.zoop.gatewaysdk.sampleapp;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Base64;
@@ -31,6 +33,7 @@ import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.OFFLINE_A
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.OFFLINE_AADHAAR_SUCCESS;
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.REQUEST_AADHAARAPI;
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_BASE_URL;
+import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_IS_ASSIST_MODE_ONLY;
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_IS_SHARE_CODE_PREFILL;
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_PHONE;
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_REQUEST_TYPE;
@@ -121,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent gatewayIntent = new Intent(MainActivity.this, ZoopConsentActivity.class);
                     gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "8bb19908-6117-4e53-99d9-45e439e7f125");
                     gatewayIntent.putExtra(ZOOP_BASE_URL, "preprod.aadhaarapi.com");
-                    gatewayIntent.putExtra(ZOOP_IS_SHARE_CODE_PREFILL, true);
+                    gatewayIntent.putExtra(ZOOP_IS_ASSIST_MODE_ONLY, true);
 //                    gatewayIntent.putExtra(ZOOP_EMAIL, email); //not mandatory
 //                    gatewayIntent.putExtra(ZOOP_UID, uid); //not mandatory
                     gatewayIntent.putExtra(ZOOP_PHONE, "8087337240"); //not mandatory
@@ -136,16 +139,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void reset() {
         llInitLayout.setVisibility(View.VISIBLE);
-
         llFacematchScore.setVisibility(View.GONE);
         llEmailStatus.setVisibility(View.GONE);
         llPhoneStatus.setVisibility(View.GONE);
         ivCapturedImage.setVisibility(View.GONE);
         tvResult.setVisibility(View.GONE);
         resultDisplayLayout.setVisibility(View.GONE);
-
         llDetailedAddress.setVisibility(View.GONE);
-
         tvHouse.setVisibility(View.GONE);
         tvPostalcode.setVisibility(View.GONE);
         tvStreet.setVisibility(View.GONE);
