@@ -17,24 +17,25 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/open_sans</item>
     </array>
-    <color name="colorAccent">#fa7e5c</color>
+    <color name="colorAccent">#64b262</color>
     <color name="colorPrimary">#000</color>
     <color name="colorPrimaryDark">#000</color>
     <color name="qtAccent">#1abc2e</color>
     <color name="zoopBlack">#000</color>
-    <color name="zoopDtAccent">#fa7e5c</color>
+    <color name="zoopDtAccent">#64b262</color>
     <color name="zoopDtPrimary">#000000</color>
     <color name="zoopDtPrimaryDark">#000000</color>
     <color name="zoopDtSecondary">#ffffff</color>
     <color name="zoopGreen">#64b262</color>
     <color name="zoopGrey">#e3e3e3</color>
     <color name="zoopGreyDark">#b3b3b3</color>
-    <color name="zoopLtAccent">#fa7e5c</color>
+    <color name="zoopLtAccent">#64b262</color>
     <color name="zoopLtPrimary">#FFFFFF</color>
     <color name="zoopLtPrimaryDark">#FFFFFF</color>
     <color name="zoopLtSecondary">#000000</color>
+    <color name="zoopNextButtonText">#fff</color>
     <color name="zoopRed">#de5246</color>
-    <color name="zoopTransparent"/>
+    <color name="zoopTransparent">#80000000</color>
     <color name="zoopWhite">#ffffff</color>
     <dimen name="zoop_button_text">16sp</dimen>
     <dimen name="zoop_heading_text">16sp</dimen>
@@ -51,28 +52,36 @@
     <dimen name="zoop_small_text">14sp</dimen>
     <dimen name="zoop_timer_text">21sp</dimen>
     <dimen name="zoop_title_text">18sp</dimen>
+    <string name="aadhar_number_enter_instruction">Enter your 12 digit Aadhaar number or 16 digit Virtual ID to begin</string>
     <string name="app_name">offline_aadhaar</string>
+    <string name="company_name">Zoop.one</string>
+    <string name="enter_captcha_instruction">Enter Captcha</string>
+    <string name="enter_otp_code_instruction">Enter 6 digit OTP</string>
+    <string name="enter_share_code_instruction">Enter 4 digit random share code</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="loaderMsg">Redirecting to UIDAI portal</string>
     <string name="loader_wv_init_msg">Redirecting to UIDAI portal</string>
-    <string name="otp_hint">enter otp number</string>
+    <string name="otp_hint">Enter OTP Number</string>
+    <string name="powered_text">Powered by</string>
     <string name="proceed_on_ssl_error">true</string>
     <string name="sdk_null_response_error">No response received from the server</string>
-    <string name="security_code_hint">enter CAPTCHA security code</string>
-    <string name="share_code_hint">enter share code</string>
+    <string name="security_code_hint">Enter CAPTCHA </string>
+    <string name="share_code_hint">Eg. 1111</string>
     <string name="tv_timer_finish">OTP wait time finished</string>
-    <string name="uid_hint">enter aadhaar number/VID</string>
+    <string name="uid_hint">Enter Aadhaar number/VID</string>
     <string name="zoopCancel">Cancel</string>
     <string name="zoopConsent">Consent for downloading Offline KYC</string>
     <string name="zoopConsentInstr">In next screen you will be redirected to UIDAI website to download the Aadhaar file.
-        \nYou will be asked to enter Aadhaar Number, Captcha, share code and OTP received at your linked mobile number.
-        \n\nWe have enabled assist mode to help you with process.
+        \nYou will be asked to enter Aadhaar Number, Captcha, Share code and OTP received at your registered mobile number.
+        \n\nWe have enabled assist mode to help you with process .
     </string>
+    <string name="zoopConsentInstrProceed"> By Proceeding button, you\'ll sharing the Aadhaar XML to {Company Name} for the {purpose (Ex. Loan)} post successful transaction</string>
     <string name="zoopProceedAssistMode">Proceed (Recommended)</string>
+    <string name="zoopProceedAssistModeOnly">Proceed</string>
     <string name="zoopProceedWebviewMode">Disable assist mode and continue</string>
     <string name="zoopRetry">Retry</string>
-    <string name="zoopTimerInstr">waiting for OTP confirmation</string>
-    <string name="zoopTimerInstrShare">waiting for OTP confirmation before please enter your share code</string>
+    <string name="zoopTimerInstr">Enter 6 digit OTP Number</string>
+    <string name="zoopTimerInstrShare">Set your 4 digit share code</string>
     <string name="zoop_init_timer">00:00</string>
     <string name="zoop_local_url">10.1.5.92</string>
     <string name="zoop_preprod_url">preprod.aadhaarapi.com</string>
