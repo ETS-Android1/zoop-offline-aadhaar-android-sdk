@@ -3,13 +3,15 @@ package one.zoop.gatewaysdk.sampleapp;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,6 +21,11 @@ import android.widget.TextView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+
+import androidx.core.content.FileProvider;
 import sdk.zoop.one.offline_aadhaar.zoopActivity.ZoopConsentActivity;
 
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.OFFLINE_AADHAAR;
@@ -27,13 +34,13 @@ import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.OFFLINE_A
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.REQUEST_AADHAARAPI;
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_BASE_URL;
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_EMAIL;
+import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_IS_ASSIST_MODE_ONLY;
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_IS_SHARE_CODE_PREFILL;
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_PHONE;
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_REQUEST_TYPE;
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_RESULT;
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_TAG;
 import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_TRANSACTION_ID;
-import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_UID;
 
 public class MainActivity extends AppCompatActivity {
     TextView tvResult;
@@ -95,11 +102,31 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (llInitLayout.getVisibility() == View.VISIBLE) {
+//                    File mFolder = new File(Arrays.toString(getExternalFilesDirs(Environment.DIRECTORY_DOWNLOADS))
+//                            + "/" + "123567");
+//                    //File f = new File(mFolder.getAbsolutePath() + "/" + "noName12");
+//
+//                    try {
+//                        FileProvider.getUriForFile()
+//
+//                        File.createTempFile("11hhjhhk", ".jps", mFolder);
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+
+//                    if (!f.exists()) {
+//                        try {
+//                            f.createNewFile();
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
                     env = "preprod.aadhaarapi.com";
                     Intent gatewayIntent = new Intent(MainActivity.this, ZoopConsentActivity.class);
+                    gatewayIntent.putExtra(ZOOP_EMAIL, "divyankvijay.96@gmail.com"); //not mandatory
                     gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "cb037e2f-f257-406e-b0c4-f7711088386e");
                     gatewayIntent.putExtra(ZOOP_BASE_URL, "preprod.aadhaarapi.com");
-                    gatewayIntent.putExtra(ZOOP_IS_SHARE_CODE_PREFILL, true);
+                    gatewayIntent.putExtra(ZOOP_IS_ASSIST_MODE_ONLY, false);
 //                    gatewayIntent.putExtra(ZOOP_EMAIL, email); //not mandatory
 //                    gatewayIntent.putExtra(ZOOP_UID, uid); //not mandatory
                     gatewayIntent.putExtra(ZOOP_PHONE, "8087337240"); //not mandatory
@@ -114,16 +141,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void reset() {
         llInitLayout.setVisibility(View.VISIBLE);
-
         llFacematchScore.setVisibility(View.GONE);
         llEmailStatus.setVisibility(View.GONE);
         llPhoneStatus.setVisibility(View.GONE);
         ivCapturedImage.setVisibility(View.GONE);
         tvResult.setVisibility(View.GONE);
         resultDisplayLayout.setVisibility(View.GONE);
-
         llDetailedAddress.setVisibility(View.GONE);
-
         tvHouse.setVisibility(View.GONE);
         tvPostalcode.setVisibility(View.GONE);
         tvStreet.setVisibility(View.GONE);
@@ -163,7 +187,6 @@ public class MainActivity extends AppCompatActivity {
                 //String responseString1 = data.getStringExtra(ZOOP_RESULT);
                 if (resultCode == OFFLINE_AADHAAR_SUCCESS) {
                     String responseString = data.getStringExtra(ZOOP_RESULT);
-                    //handle success for credit_score
                     tvResult.setVisibility(View.VISIBLE);
                     resultDisplayLayout.setVisibility(View.VISIBLE);
                     llResultBg.setVisibility(View.VISIBLE);
@@ -180,7 +203,6 @@ public class MainActivity extends AppCompatActivity {
 
                 if (resultCode == OFFLINE_AADHAAR_ERROR) {
                     String errorString = data.getStringExtra(ZOOP_RESULT);
-                    //handle error for credit_Score
                     // tvResult.setText(errorString);
                     tvResult.setVisibility(View.VISIBLE);
                     resultDisplayLayout.setVisibility(View.GONE);
