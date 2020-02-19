@@ -1,13 +1,13 @@
 # zoop-offline-aadhar-android-sdk
 
 ## 1. INTRODUCTION
-AadhaarAPI provide WEB and Mobile gateway for fetching Aadhaar Information of Users. Using these gateways any organization onboarded with us can get Users aadhaar data from their official E-aadhaar PDF’s, Offline Aadhaar XML and mAadhaar QR image.
+AadhaarAPI provide WEB and Mobile gateway for fetching Aadhaar Information of Users. Using these gateways any organization onboarded with us can get User's aadhaar data from their masked E-aadhaar PDF’s, Offline Aadhaar XML and mAadhaar QR image.
 
 ## 2. PROCESS FLOW
 1. At your backend server, Initiate the offline aadhaar transaction using Rest API [POST] call. Details of these are available in the documents later. You will require API key and Agency Id for accessing this API which can be generated from the Dashboard. 
 2. This gateway transaction id then needs to be communicated back to the frontend where SDK functions are to be called. 
 3. After including the SDK files (JS & CSS) at frontend and a small HTML snippet, client has to pass above generated transaction id to an SDK function to create a new gateway object and then open the gateway using another function call. 
-4. This will open the gateway as shown in above image and the rest of the process till response will be handled by the gateway itself. 
+4. This will open the gateway and the rest of the process till response will be handled by the gateway itself. 
 5. Once the transaction is successful or failed, appropriate handler function will be called with response JSON, that can be used by the client to process the flow further. 
 6. Result data will be sent to the responseUrl requested via INIT call. 
 7. Client will also have a REST API available to pull the status of a gateway transaction from backend and reason of failure. 
@@ -67,7 +67,7 @@ To add SDK file as library in your Project, Perform the following Steps:
 6. Use the “+” button of the dependencies screen and choose “Module dependency”.
 7. Choose the module and click “OK”.
 
-## 5. CONFIGURING AND LAUNCHING THE E-SIGN SDK
+## 5. CONFIGURING AND LAUNCHING THE OFFLINE AADHAAR SDK
 
 ### 5.1 IMPORT FILES
 Import following files in your Activity:
@@ -85,6 +85,7 @@ Import following files in your Activity:
     import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_TAG;
     import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_TRANSACTION_ID;
     import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_UID;
+    import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_IS_SHARE_CODE_PREFILL;
 
 ### 5.2 BUILD GRADLE(app)
 
@@ -100,16 +101,52 @@ Import following files in your Activity:
         implementation 'com.android.volley:volley:1.1.0'
     }
     
-### 5.3 CALL OFFLINE AADHAAR SDK FROM THE ACTIVITY
-Use the Intent Function to call the E-Sign SDK from your Activity as shown below:
+### 5.3 MANIFEST FILE
 
-    String GatewayId, Email, environment, phone;
+     <?xml version="1.0" encoding="utf-8"?>
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        package="one.zoop.gatewaysdk.sampleapp">
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+        <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+            <activity android:name=".MainActivity">
+                <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+
+                    <category android:name="android.intent.category.LAUNCHER" />
+                </intent-filter>
+            </activity>
+            <provider
+                android:name="android.support.v4.content.FileProvider"
+                android:authorities="sdk.zoop.one.offline_aadhaar"
+                android:exported="false"
+                android:grantUriPermissions="true">
+                <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/provider_paths" />
+            </provider>
+        </application>
+
+    </manifest>
+    
+### 5.4 CALL OFFLINE AADHAAR SDK FROM THE ACTIVITY
+Use the Intent Function to call the Offline Aadhaar SDK from your Activity as shown below:
+
+    String GatewayId, Email, baseUrl, phone
+    boolean isShareCodePreFill;
     Intent gatewayIntent = new Intent(MainActivity.this, ZoopConsentActivity.class);
     gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "222c21aa-2fff-4ec6-94cb-04d68174324a");
-    gatewayIntent.putExtra(ZOOP_ENV, env);
+    gatewayIntent.putExtra(ZOOP_BASE_URL, baseUrl);
     gatewayIntent.putExtra(ZOOP_EMAIL, Email); //not mandatory
     //gatewayIntent.putExtra(ZOOP_UID, uid); //not mandatory
     gatewayIntent.putExtra(ZOOP_PHONE, phone); //not mandatory
+    gatewayIntent.putExtra(ZOOP_IS_SHARE_CODE_PREFILL, isShareCodePreFill); //not mandatory
     gatewayIntent.putExtra(ZOOP_REQUEST_TYPE, OFFLINE_AADHAAR);
     startActivityForResult(gatewayIntent, REQUEST_AADHAARAPI);
     
@@ -118,15 +155,17 @@ Params: GatewayId: “Transaction Id generated from your backend must be passed 
 
 environment: for pre-prod use "preprod.aadhaarapi.com" and for prod use "prod.aadhaarapi.com"
 
+isShareCodePreFill: if it is true then 4-digit share code will be filled randomly otherwise you need to fill it manually.
+
 Example:
 
 GatewayId = "a051231e-ddc7-449d-8635-bb823485a20d";
 
 Email = “youremail@gmail.com";
 
-environment = "preprod.aadhaarapi.com";
+baseUrl = "preprod.aadhaarapi.com";
 
-### 5.4 HANDLE SDK RESPONSE
+### 5.5 HANDLE SDK RESPONSE
 
 The responses incase of successful transaction as well as response in case of error will be sent to your activity & can be handled via onActivityResult( ) method as shown below.
 
@@ -188,6 +227,15 @@ The responses incase of successful transaction as well as response in case of er
             }
         }
     }
+    
+ ### 5.6 STRINGS.XML FILE
+ 
+ The instructions message can be modify from strings.xml file 
+ 
+    <string name="zoopTimerInstr">waiting for OTP confirmation</string>
+    <string name="zoopTimerInstrShare">waiting for OTP confirmation before please enter share code</string>
+    <string name="tv_timer_finish">OTP wait time finished</string>
+    
     
  ## 6. RESPONSE FORMAT SENT ON MOBILE  
  
