@@ -85,7 +85,7 @@ Import following files in your Activity:
     import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_TAG;
     import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_TRANSACTION_ID;
     import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_UID;
-    import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_IS_SHARE_CODE_PREFILL;
+    import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_IS_ASSIST_MODE_ONLY;
 
 ### 5.2 BUILD GRADLE(app)
 
@@ -148,7 +148,7 @@ Use the Intent Function to call the Offline Aadhaar SDK from your Activity as sh
     gatewayIntent.putExtra(ZOOP_EMAIL, Email); //not mandatory
     //gatewayIntent.putExtra(ZOOP_UID, uid); //not mandatory
     gatewayIntent.putExtra(ZOOP_PHONE, phone); //not mandatory
-    gatewayIntent.putExtra(ZOOP_IS_SHARE_CODE_PREFILL, isShareCodePreFill); //not mandatory
+    gatewayIntent.putExtra(ZOOP_IS_ASSIST_MODE_ONLY, false); //not mandatory
     gatewayIntent.putExtra(ZOOP_REQUEST_TYPE, OFFLINE_AADHAAR);
     startActivityForResult(gatewayIntent, REQUEST_AADHAARAPI);
     
