@@ -1406,10 +1406,14 @@ string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
+string invalid_captcha_error
+string invalid_uid_error
 string loaderMsg
 string loader_wv_init_msg
+string mobile_number_not_linked_error
 string mtrl_chip_close_icon_content_description
 string otp_hint
+string otp_sent_to_mobile_message
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -1422,6 +1426,7 @@ string search_menu_title
 string security_code_hint
 string share_code_hint
 string status_bar_notification_info_overflow
+string technical_issue_error
 string tv_timer_finish
 string uid_hint
 string zoopCancel
