@@ -362,6 +362,7 @@
                     android:padding="0dp"
                     android:text="Next"
                     android:textColor="@color/zoopNextButtonText" />
+
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>

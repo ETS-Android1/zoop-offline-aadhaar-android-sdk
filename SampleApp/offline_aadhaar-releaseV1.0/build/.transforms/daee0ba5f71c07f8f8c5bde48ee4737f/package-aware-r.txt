@@ -711,6 +711,7 @@ color zoopLtAccent
 color zoopLtPrimary
 color zoopLtPrimaryDark
 color zoopLtSecondary
+color zoopNextButtonText
 color zoopRed
 color zoopTransparent
 color zoopWhite
@@ -1034,6 +1035,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable card_view_radius
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1044,6 +1046,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_next
+drawable ic_zoop_logo
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1094,6 +1097,7 @@ id btnProceedAssistmode
 id btnProceedWebviewMode
 id buttonPanel
 id cancel_action
+id captchaImage
 id center
 id checkbox
 id chronometer
@@ -1160,6 +1164,7 @@ id notification_main_column
 id notification_main_column_container
 id outline
 id overlayProgressBar
+id overlayProgressBar3
 id packed
 id parallax
 id parent
@@ -1241,6 +1246,7 @@ id tvCancel
 id tvConsentInstr
 id tvConsentTitle
 id tvConsentViewLoadingMsg
+id tvInstructions
 id tvRetry
 id tvTimer
 id tvTimerInstruction
@@ -1347,6 +1353,7 @@ mipmap ic_arrow
 mipmap ic_close
 mipmap ic_done
 mipmap ic_loading
+string aadhar_number_enter_instruction
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -1391,6 +1398,10 @@ string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string character_counter_content_description
 string character_counter_pattern
+string company_name
+string enter_captcha_instruction
+string enter_otp_code_instruction
+string enter_share_code_instruction
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string hello_blank_fragment
@@ -1404,6 +1415,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string powered_text
 string proceed_on_ssl_error
 string sdk_null_response_error
 string search_menu_title
@@ -1415,7 +1427,9 @@ string uid_hint
 string zoopCancel
 string zoopConsent
 string zoopConsentInstr
+string zoopConsentInstrProceed
 string zoopProceedAssistMode
+string zoopProceedAssistModeOnly
 string zoopProceedWebviewMode
 string zoopRetry
 string zoopTimerInstr
