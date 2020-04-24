@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">SampleApp</string>
-    <string name="zoopTimerInstr">waiting for OTP confirmation</string>
-    <string name="zoopTimerInstrShare">waiting for OTP confirmation before please enter your 4 digit share code</string>
-    <string name="tv_timer_finish">OTP wait time finished</string>
+
+    <string name="technical_issue_error">Technical issue please try after some time.</string>
+    <string name="mobile_number_not_linked_error">Aadhaar number does not have mobile number.</string>
+    <string name="invalid_captcha_error">Please Enter Valid Captcha</string>
+    <string name="invalid_uid_error">Invalid UID</string>
+    <string name="otp_sent_to_mobile_message">OTP sent to your Registered Mobile number. Check your mobile.</string>
 </resources>
