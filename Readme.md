@@ -97,7 +97,7 @@ Import following files in your Activity:
         androidTestImplementation 'com.android.support.test:runner:1.0.2'
         androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
         implementation 'com.android.support:cardview-v7:28.0.0'
-        implementation project(':offline_aadhaar-releaseV1.0')
+        implementation project(':offline_aadhaar-releaseV1.0.3')
         implementation 'com.android.volley:volley:1.1.0'
         implementation 'io.sentry:sentry-android:1.7.27'   //COPY SENTRY TO LOG ERROR MESSAGES
 
