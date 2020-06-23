@@ -56,7 +56,15 @@ The above generated gateway transactionId has to be made available in your andro
 
 Note: A transaction is valid only for 30 mins after generation.
 
-## 4. ADDING SDK (.AAR FILE) TO YOUR PROJECT
+## 4. ADDING SDK TO YOUR PROJECT
+
+### USING GRADLE
+   
+   Implement below line in your build.gradle file at app level under dependency section
+   
+    implementation 'sdk.zoop.one.offline_aadhaar:offline_aadhaar:1.0.3'
+    
+### USING AAR FILE    
 To add SDK file as library in your Project, Perform the following Steps:
 
 1. Right click on your project and choose “Open Module Settings”.
@@ -97,7 +105,8 @@ Import following files in your Activity:
         androidTestImplementation 'com.android.support.test:runner:1.0.2'
         androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
         implementation 'com.android.support:cardview-v7:28.0.0'
-        implementation project(':offline_aadhaar-releaseV1.0.3')
+        implementation 'sdk.zoop.one.offline_aadhaar:offline_aadhaar:1.0.3'// only if you are using gradle dependency in this 
+       // implementation project(':offline_aadhaar-releaseV1.0.3')// only if you are using AAR file then
         implementation 'com.android.volley:volley:1.1.0'
         implementation 'io.sentry:sentry-android:1.7.27'   //COPY SENTRY TO LOG ERROR MESSAGES
 
