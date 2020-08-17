@@ -1,1 +1,2 @@
-include ':app', ':offline_aadhaar-releaseV1.0.4'
+include ':offline_aadhaar-releaseV1.0.7'
+include ':app'
