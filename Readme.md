@@ -292,7 +292,7 @@ The responses incase of successful transaction as well as response in case of er
       "env": <<environment code>>,
       "mode": "<<mode>>",
       "transaction_status": 6,
-      "internal_status": <<internal status for failure (refer annexture)>>,
+      "internal_status": <<internal status for failure (refer below)>>,
       "transaction_attempts": <<number of attempts>>,
       "public_ip": "<<user ip address>>",
       "request_medium": "<<what was origin of request web or mobile>>",
@@ -304,4 +304,108 @@ The responses incase of successful transaction as well as response in case of er
       "request_consent": "<<user consent Y or N>>",
       "request_timestamp": "2019-01-22 18:33:09:602 +05:30",
       "response_timestamp": "2019-01-22 18:33:09:626 +05:30"
+    }
+    
+   ### 6.3 INTERNAL STATUS
+   
+    {
+     "ZOOP_004": {
+       "error_code": "ZOOP_004",
+       "sdk_response": "Download Manager is disabled",
+       "statusCode": 6
+     },
+     "ZOOP_005": {
+       "error_code": "ZOOP_005",
+       "sdk_response": "Permissions not granted by the user",
+       "statusCode": 6
+     },
+     "ZOOP_006": {
+       "error_code": "ZOOP_006",
+       "sdk_response": "Go to settings and enable required permissions",
+       "statusCode": 6
+     },
+     "ZOOP_007": {
+       "error_code": "ZOOP_007",
+       "sdk_response": "Unknown Error Occured",
+       "statusCode": 6
+     },
+     "ZOOP_008": {
+       "error_code": "ZOOP_008",
+       "sdk_response": "KYC XML download failed"
+     },
+     "ZOOP_009": {
+       "error_code": "ZOOP_009",
+       "sdk_response": "Share code is invalid."
+     },
+     "ZOOP_010": {
+       "error_code": "ZOOP_010",
+       "sdk_response": "File not found",
+       "statusCode": 6
+     },
+     "ZOOP_011": {
+       "error_code": "ZOOP_011",
+       "sdk_response": "Camera error",
+       "statusCode": 5
+     },
+     "ZOOP_012": {
+       "error_code": "ZOOP_012",
+       "sdk_response": "Camera error",
+       "statusCode": 5
+     },
+     "ZOOP_013": {
+       "error_code": "ZOOP_013",
+       "sdk_response": "User cancelled image capture",
+       "statusCode": 5
+     },
+     "ZOOP_014": {
+       "error_code": "ZOOP_014",
+       "sdk_response": "Failed to capture image",
+       "statusCode": 5
+     },
+     "ZOOP_015": {
+       "error_code": "ZOOP_015",
+       "sdk_response": "Error downloading XML on phone"
+     },
+     "ZOOP_016": {
+       "error_code": "ZOOP_016",
+       "sdk_response": "Error Downloading XML on phone, no storage directory was found",
+       "statusCode": 6
+     },
+     "ZOOP_017": {
+       "error_code": "ZOOP_017",
+       "sdk_response": "KYC ZIP download failed"
+     },
+     "ZOOP_018": {
+       "error_code": "ZOOP_018",
+       "sdk_response": "Failed to capture image",
+       "statusCode": 5
+     },
+     "ZOOP_020": {
+       "error_code": "ZOOP_020",
+       "sdk_response": "Aadhaar number does not have mobile number",
+       "statusCode": 6
+     },
+     "ZOOP_021": {
+       "error_code": "ZOOP_021",
+       "sdk_response": "Please Enter Valid Captcha"
+     },
+     "ZOOP_022": {
+       "error_code": "ZOOP_022",
+       "sdk_response": "Technical issue please try after some time",
+       "statusCode": 6
+     },
+     "ZOOP_023": {
+       "error_code": "ZOOP_023",
+       "sdk_response": "Technical issue please try after some time",
+       "statusCode": 6
+     },
+     "ZOOP_024": {
+       "error_code": "ZOOP_024",
+       "sdk_response": "Transaction terminated by the user",
+       "statusCode": 11
+     },
+     "ZOOP_026": {
+       "error_code": "ZOOP_026",
+       "sdk_response": "OTP Wait time expired"
+     }
     }
