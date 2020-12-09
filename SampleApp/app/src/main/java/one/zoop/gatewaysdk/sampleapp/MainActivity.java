@@ -123,13 +123,10 @@ public class MainActivity extends AppCompatActivity {
 //                    }
                     env = "preprod.aadhaarapi.com";
                     Intent gatewayIntent = new Intent(MainActivity.this, ZoopConsentActivity.class);
-                    gatewayIntent.putExtra(ZOOP_EMAIL, "divyankvijay.96@gmail.com"); //not mandatory
-                    gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "263ab25f-f64e-4e5e-9be6-702e991b0182");
+                    gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "dcbec819-0d22-4d92-af00-24ab509e9a33");
                     gatewayIntent.putExtra(ZOOP_BASE_URL, "preprod.aadhaarapi.com");
-                    gatewayIntent.putExtra(ZOOP_IS_ASSIST_MODE_ONLY, false);
 //                    gatewayIntent.putExtra(ZOOP_EMAIL, email); //not mandatory
 //                    gatewayIntent.putExtra(ZOOP_UID, uid); //not mandatory
-                    gatewayIntent.putExtra(ZOOP_PHONE, "8087337240"); //not mandatory
                     gatewayIntent.putExtra(ZOOP_REQUEST_TYPE, OFFLINE_AADHAAR);
                     startActivityForResult(gatewayIntent, REQUEST_AADHAARAPI);
                 } else {
