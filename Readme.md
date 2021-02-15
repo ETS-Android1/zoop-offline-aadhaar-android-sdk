@@ -253,37 +253,51 @@ The responses incase of successful transaction as well as response in case of er
  ### 6.1 SUCCESS JSON RESPONSE FORMAT FOR OFFLINE AADHAAR SUCCESS
  
     {
-     "id": "<<transaction id>>",
-     "env": <<environment code>>,
-     "mode": "<<mode>>",
-     "transaction_status": 5,
-     "internal_status": null,
-     "transaction_attempts": <<number of attempts>>,
-     "public_ip": "<<user ip address>>",
-     "request_medium": "<<what was origin of request web or mobile>>",
-     "response_url": "<<response url of agency>>",
-     "face_match": "<<Y or N>>",
-     "face_match_resp": "<<Y,N or S (if face match got a response or not) S stands for skipped>>",
-     "face_match_remark": "<<in case of face_match_resp = s , Reason why face match was skipped>>",
-     "face_match_txn": "<<face match transaction id>>",
-     "request_consent": "<<user consent Y or N>>",
-     "request_timestamp": "2019-01-22 18:33:09:602 +05:30",
-     "response_timestamp": "2019-01-22 18:33:09:626 +05:30",
-     "transaction_data": {
-       "BasicInfo": {
-         "Name": "<<user name>>",
-         "DOB": "<<DOB>>",
-         "Gender": "<<gender>>"
+    "id":"21284528-0006-4b16-b63e-38d78b613f19",
+    "env":2,
+    "mode":"xml",
+    "transaction_status":5,
+    "internal_status":"",
+    "transaction_attempts":0,
+    "public_ip":null,
+    "request_medium":null,
+    "response_url":"<<response url>>",
+    "response_to_agency":"N",
+    "face_match":"Y",
+    "face_match_resp":"Y",
+    "face_match_remark":null,
+    "face_match_txn":"99a6058a-419d-4501-a9bf-17d58f7e05ea",
+    "request_consent":"N",
+    "purpose":"Testing aadhaar",
+    "request_timestamp":"2021-02-15 14:34:05:538 +05:30",
+    "response_timestamp":"2021-02-15 14:34:05:545 +05:30",
+    "face_match_type":"S",
+    "transaction_data":{
+       "BasicInfo":{
+          "Name":"<<user name>>",
+          "DOB":"<<DOB>>",
+          "Gender":"<<gender>>"
        },
-       "Image": "<<Base 64 of user image>>",
-       "AadhaarInfo": "XXXXXXXX4302",
-       "AddressEnglish": "<<user address>>",
-       "EmailInfo": "<<Verified or Not Verified (XML mode only)>>",
-       "PhoneInfo": "<<Verified or Not Verified (XML mode only)>>",
-       "FaceMatchScore": "<<Facematch Score out of 100>>",
-       “UserSelfie”: “<<base 64 of user selfie image>>”
-     }
+       "FileCreatedAt":"2021-02-15T14:00:36.278Z",
+       "Image":"<<Base 64 of user image>>",
+       "AadhaarInfo":"XXXXXXXX3488",
+       "AddressEnglish":"<<Base 64 of user image>>",
+       "DetailedAddress":{
+          "house":"<<house number>>",
+          "postoffice":"<<post office>>",
+          "district":"<<district>>",
+          "state":"<<state>>",
+          "postalcode":"<<pin code>>"
+       },
+       "EmailInfo":"Not Verified",
+       "PhoneInfo":"Verified",
+       "Xml":"<<xml file response>>",
+       "pdf_url":"<<downloaded zip file url>>",
+       "password":"<<share code>>",
+       "FaceMatchScore":"<<Facematch Score out of 100>>",
+       "UserSelfie":"<<base 64 of user selfie image>>"
     }
+ }
     
  ### 6.2 ERROR JSON RESPONSE FORMAT FOR OFFLINE AADHAAR ERROR
    
