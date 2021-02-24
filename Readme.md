@@ -135,7 +135,7 @@ Import following files in your Activity:
             </activity>
             <provider
                 android:name="android.support.v4.content.FileProvider"
-                android:authorities="sdk.zoop.one.offline_aadhaar"
+                android:authorities="<<YOUR PACKAGE NAME>>"
                 android:exported="false"
                 android:grantUriPermissions="true">
                 <meta-data
