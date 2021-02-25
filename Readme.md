@@ -164,7 +164,7 @@ Use the Intent Function to call the Offline Aadhaar SDK from your Activity as sh
     
 Params: GatewayId: “Transaction Id generated from your backend must be passed here”
 
-environment: for pre-prod use "preprod.aadhaarapi.com" and for prod use "prod.aadhaarapi.com"
+environment: for pre-prod use "QT_PP" and for prod use "QT_P"
 
 isShareCodePreFill: if it is true then 4-digit share code will be filled randomly otherwise you need to fill it manually.
 
@@ -174,7 +174,7 @@ GatewayId = "a051231e-ddc7-449d-8635-bb823485a20d";
 
 Email = “youremail@gmail.com";
 
-baseUrl = "preprod.aadhaarapi.com";
+baseUrl = "QT_PP";
 
 ### 5.5 HANDLE SDK RESPONSE
 
