@@ -1,0 +1,2 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('offline_aadhaar-release_V1.1.0.aar'))

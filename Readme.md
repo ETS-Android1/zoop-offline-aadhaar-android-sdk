@@ -1,7 +1,10 @@
 # zoop-offline-aadhar-android-sdk
 
+## NEW RELEASE(1.1.0)
+ Change baseUrl value to "QT_PP" for preprod and "QT_P" for prod
+
 ## 1. INTRODUCTION
-AadhaarAPI provide WEB and Mobile gateway for fetching Aadhaar Information of Users. Using these gateways any organization onboarded with us can get User's aadhaar data from their masked E-aadhaar PDF’s, Offline Aadhaar XML and mAadhaar QR image.
+AadhaarAPI provide WEB and Mobile gateway for fetching Aadhaar Information of Users. Using these gateways any organization onboarded with us can get User's aadhaar data from their masked E-aadhaar PDF’s, Offline Aadhaar XML and mAadhaar QR image. Video for better understanding (https://youtu.be/IoIh2Q9mnMo)
 
 ## 2. PROCESS FLOW
 1. At your backend server, Initiate the offline aadhaar transaction using Rest API [POST] call. Details of these are available in the documents later. You will require API key and Agency Id for accessing this API which can be generated from the Dashboard. 
@@ -62,7 +65,7 @@ Note: A transaction is valid only for 30 mins after generation.
    
    Implement below line in your build.gradle file at app level under dependency section
    
-    implementation 'sdk.zoop.one.offline_aadhaar:offline_aadhaar:1.0.9'
+    implementation 'sdk.zoop.one.offline_aadhaar:offline_aadhaar:1.1.0'
     
 ### USING AAR FILE    
 To add SDK file as library in your Project, Perform the following Steps:
@@ -96,19 +99,14 @@ Import following files in your Activity:
     import static sdk.zoop.one.offline_aadhaar.zoopUtils.ZoopConstantUtils.ZOOP_IS_ASSIST_MODE_ONLY;
 
 ### 5.2 BUILD GRADLE(app)
+All dependencies are mandatory to import in app.gradle file of yours 
 
     dependencies {
-        implementation fileTree(include: ['*.jar'], dir: 'libs')
-        implementation 'com.android.support:appcompat-v7:28.0.0'
-        implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-        testImplementation 'junit:junit:4.12'
-        androidTestImplementation 'com.android.support.test:runner:1.0.2'
-        androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-        implementation 'com.android.support:cardview-v7:28.0.0'
-        implementation 'sdk.zoop.one.offline_aadhaar:offline_aadhaar:1.0.9'// only if you are using gradle dependency in this 
-       // implementation project(':offline_aadhaar-releaseV1.0.9')// only if you are using AAR file then
+        implementation 'com.android.support:cardview-v7:28.0.0' //(Mandatory to import in app.gradle file with your app target version)
+        implementation 'sdk.zoop.one.offline_aadhaar:offline_aadhaar:1.1.0'// only if you are using gradle dependency in this 
+       // implementation project(':offline_aadhaar-releaseV1.1.0')// only if you are using AAR file then
         implementation 'com.android.volley:volley:1.1.0'
-        implementation 'io.sentry:sentry-android:1.7.27'   //COPY SENTRY TO LOG ERROR MESSAGES
+        implementation 'io.sentry:sentry-android:1.7.27'   //COPY SENTRY TO LOG ERROR MESSAGES (Mandatory to import in app.gradle file)
 
     }
     
@@ -149,8 +147,7 @@ Import following files in your Activity:
 ### 5.4 CALL OFFLINE AADHAAR SDK FROM THE ACTIVITY
 Use the Intent Function to call the Offline Aadhaar SDK from your Activity as shown below:
 
-    String GatewayId, Email, baseUrl, phone
-    boolean isShareCodePreFill;
+    String GatewayId, Email, baseUrl = "QT_PP", phone
     Intent gatewayIntent = new Intent(MainActivity.this, ZoopConsentActivity.class);
     gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "222c21aa-2fff-4ec6-94cb-04d68174324a");
     gatewayIntent.putExtra(ZOOP_BASE_URL, baseUrl);
@@ -164,7 +161,7 @@ Use the Intent Function to call the Offline Aadhaar SDK from your Activity as sh
     
 Params: GatewayId: “Transaction Id generated from your backend must be passed here”
 
-environment: for pre-prod use "preprod.aadhaarapi.com" and for prod use "prod.aadhaarapi.com"
+environment: for pre-prod use "QT_PP" and for prod use "QT_P"
 
 isShareCodePreFill: if it is true then 4-digit share code will be filled randomly otherwise you need to fill it manually.
 
@@ -174,7 +171,7 @@ GatewayId = "a051231e-ddc7-449d-8635-bb823485a20d";
 
 Email = “youremail@gmail.com";
 
-baseUrl = "preprod.aadhaarapi.com";
+baseUrl = "QT_PP";
 
 ### 5.5 HANDLE SDK RESPONSE
 

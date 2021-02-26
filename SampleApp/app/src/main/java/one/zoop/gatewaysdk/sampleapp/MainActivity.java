@@ -102,29 +102,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (llInitLayout.getVisibility() == View.VISIBLE) {
-//                    File mFolder = new File(Arrays.toString(getExternalFilesDirs(Environment.DIRECTORY_DOWNLOADS))
-//                            + "/" + "123567");
-//                    //File f = new File(mFolder.getAbsolutePath() + "/" + "noName12");
-//
-//                    try {
-//                        FileProvider.getUriForFile()
-//
-//                        File.createTempFile("11hhjhhk", ".jps", mFolder);
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-
-//                    if (!f.exists()) {
-//                        try {
-//                            f.createNewFile();
-//                        } catch (IOException e) {
-//                            e.printStackTrace();
-//                        }
-//                    }
-                    env = "preprod.aadhaarapi.com";
+                    env = "QT_PP";
                     Intent gatewayIntent = new Intent(MainActivity.this, ZoopConsentActivity.class);
-                    gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "dcbec819-0d22-4d92-af00-24ab509e9a33");
-                    gatewayIntent.putExtra(ZOOP_BASE_URL, "preprod.aadhaarapi.com");
+                    gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "aee77668-5b81-4d93-b82e-eb4f52a24761");
+                    gatewayIntent.putExtra(ZOOP_BASE_URL, env);
 //                    gatewayIntent.putExtra(ZOOP_EMAIL, email); //not mandatory
 //                    gatewayIntent.putExtra(ZOOP_UID, uid); //not mandatory
                     gatewayIntent.putExtra(ZOOP_REQUEST_TYPE, OFFLINE_AADHAAR);
