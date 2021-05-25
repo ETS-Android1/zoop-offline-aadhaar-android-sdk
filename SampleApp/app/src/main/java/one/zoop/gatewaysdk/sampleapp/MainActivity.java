@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 if (llInitLayout.getVisibility() == View.VISIBLE) {
                     env = "QT_PP";
                     Intent gatewayIntent = new Intent(MainActivity.this, ZoopConsentActivity.class);
-                    gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "aee77668-5b81-4d93-b82e-eb4f52a24761");
+                    gatewayIntent.putExtra(ZOOP_TRANSACTION_ID, "77eb7317-2980-44c1-b54f-1a54f64ed563");
                     gatewayIntent.putExtra(ZOOP_BASE_URL, env);
 //                    gatewayIntent.putExtra(ZOOP_EMAIL, email); //not mandatory
 //                    gatewayIntent.putExtra(ZOOP_UID, uid); //not mandatory
