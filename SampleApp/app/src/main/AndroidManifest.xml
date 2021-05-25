@@ -27,7 +27,7 @@
         </activity>
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="one.zoop.gatewaysdk.sampleapp"
+            android:authorities="one.zoop.gatewaysdk.sampleapp.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

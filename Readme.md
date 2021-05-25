@@ -1,6 +1,40 @@
 # zoop-offline-aadhar-android-sdk
 
-## NEW RELEASE(1.1.0)
+## NEW RELEASE(1.1.2)
+1. In your manifest.xml add provider with authority "YOUR PACKAGE NAME".provider
+ 
+            <provider
+                android:name="android.support.v4.content.FileProvider"
+                android:authorities="<<YOUR PACKAGE NAME>>.provider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+                <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/provider_paths" />
+            </provider>
+2. Create github.properties file in your root project and add
+
+             gpr.usr = <<Your github user id>>
+             gpr.key = <<Your personal access token of github>> //give read/write packages permission to token
+             
+3. In app build.gradle file copy the code below
+  
+       def githubProperties = new Properties()
+       githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
+       repositories {
+          maven {
+              name = "GitHubPackages"
+
+              url = uri("https://maven.pkg.github.com/zoop/zoop-offline-aadhaar-android-sdk")
+              credentials {
+
+                  username = githubProperties['gpr.usr']
+                  password = githubProperties['gpr.key']
+              }
+          }
+       }
+ 
+## PREVIOUS RELEASE(1.1.0)
  Change baseUrl value to "QT_PP" for preprod and "QT_P" for prod
 
 ## 1. INTRODUCTION
@@ -65,7 +99,7 @@ Note: A transaction is valid only for 30 mins after generation.
    
    Implement below line in your build.gradle file at app level under dependency section
    
-    implementation 'sdk.zoop.one.offline_aadhaar:offline_aadhaar:1.1.0'
+    implementation 'sdk.zoop.one.offline_aadhaar:offline_aadhaar:1.1.2'
     
 ### USING AAR FILE    
 To add SDK file as library in your Project, Perform the following Steps:
@@ -101,16 +135,35 @@ Import following files in your Activity:
 ### 5.2 BUILD GRADLE(app)
 All dependencies are mandatory to import in app.gradle file of yours 
 
+       def githubProperties = new Properties()
+       githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
+       repositories {
+          maven {
+              name = "GitHubPackages"
+
+              url = uri("https://maven.pkg.github.com/zoop/zoop-offline-aadhaar-android-sdk")
+              credentials {
+
+                  username = githubProperties['gpr.usr']
+                  password = githubProperties['gpr.key']
+              }
+          }
+       }
+
     dependencies {
         implementation 'com.android.support:cardview-v7:28.0.0' //(Mandatory to import in app.gradle file with your app target version)
-        implementation 'sdk.zoop.one.offline_aadhaar:offline_aadhaar:1.1.0'// only if you are using gradle dependency in this 
-       // implementation project(':offline_aadhaar-releaseV1.1.0')// only if you are using AAR file then
+        implementation 'sdk.zoop.one.offline_aadhaar:offline_aadhaar:1.1.2'// only if you are using gradle dependency in this 
+       // implementation project(':offline_aadhaar-releaseV1.1.2')// only if you are using AAR file then
         implementation 'com.android.volley:volley:1.1.0'
         implementation 'io.sentry:sentry-android:1.7.27'   //COPY SENTRY TO LOG ERROR MESSAGES (Mandatory to import in app.gradle file)
 
     }
-    
-### 5.3 MANIFEST FILE
+### 5.3 GITHUB.PROPERTIES file
+ 
+     gpr.usr = <<Your github user id>>
+     gpr.key = <<Your personal access token of github>> //give read/write packages permission to token
+     
+### 5.4 MANIFEST FILE
 
      <?xml version="1.0" encoding="utf-8"?>
     <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -133,7 +186,7 @@ All dependencies are mandatory to import in app.gradle file of yours
             </activity>
             <provider
                 android:name="android.support.v4.content.FileProvider"
-                android:authorities="<<YOUR PACKAGE NAME>>"
+                android:authorities="<<YOUR PACKAGE NAME>>.provider"
                 android:exported="false"
                 android:grantUriPermissions="true">
                 <meta-data
@@ -144,7 +197,7 @@ All dependencies are mandatory to import in app.gradle file of yours
 
     </manifest>
     
-### 5.4 CALL OFFLINE AADHAAR SDK FROM THE ACTIVITY
+### 5.5 CALL OFFLINE AADHAAR SDK FROM THE ACTIVITY
 Use the Intent Function to call the Offline Aadhaar SDK from your Activity as shown below:
 
     String GatewayId, Email, baseUrl = "QT_PP", phone
@@ -173,7 +226,7 @@ Email = “youremail@gmail.com";
 
 baseUrl = "QT_PP";
 
-### 5.5 HANDLE SDK RESPONSE
+### 5.6 HANDLE SDK RESPONSE
 
 The responses incase of successful transaction as well as response in case of error will be sent to your activity & can be handled via onActivityResult( ) method as shown below.
 
@@ -236,7 +289,7 @@ The responses incase of successful transaction as well as response in case of er
         }
     }
     
- ### 5.6 STRINGS.XML FILE
+ ### 5.7 STRINGS.XML FILE
  
  The instructions message can be modify from strings.xml file 
  
