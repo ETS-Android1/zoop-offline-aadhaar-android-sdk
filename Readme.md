@@ -1,6 +1,11 @@
 # zoop-offline-aadhar-android-sdk
 
-## NEW RELEASE(1.1.2)
+## NEW RELEASE(1.1.4)
+
+1. There is a flag you need pass to remove assist mode from sdk ZOOP_WITHOUT_ASSIST_MODE_ONLY = true
+2. After Opening SDK only without assist mode will be visible to users
+
+## PREVIOUS RELEASE(1.1.2)
 1. In your manifest.xml add provider with authority "YOUR PACKAGE NAME".provider
  
             <provider
@@ -34,9 +39,6 @@
           }
        }
  
-## PREVIOUS RELEASE(1.1.0)
- Change baseUrl value to "QT_PP" for preprod and "QT_P" for prod
-
 ## 1. INTRODUCTION
 AadhaarAPI provide WEB and Mobile gateway for fetching Aadhaar Information of Users. Using these gateways any organization onboarded with us can get User's aadhaar data from their masked E-aadhaar PDF’s, Offline Aadhaar XML and mAadhaar QR image. Video for better understanding (https://youtu.be/IoIh2Q9mnMo)
 
@@ -207,7 +209,7 @@ Use the Intent Function to call the Offline Aadhaar SDK from your Activity as sh
     gatewayIntent.putExtra(ZOOP_EMAIL, Email); //not mandatory
     //gatewayIntent.putExtra(ZOOP_UID, uid); //not mandatory
     gatewayIntent.putExtra(ZOOP_PHONE, phone); //not mandatory
-    gatewayIntent.putExtra(ZOOP_IS_ASSIST_MODE_ONLY, false); //not mandatory
+    gatewayIntent.putExtra(ZOOP_WITHOUT_ASSIST_MODE_ONLY, false); //not mandatory
     gatewayIntent.putExtra(ZOOP_REQUEST_TYPE, OFFLINE_AADHAAR);
     startActivityForResult(gatewayIntent, REQUEST_AADHAARAPI);
     
