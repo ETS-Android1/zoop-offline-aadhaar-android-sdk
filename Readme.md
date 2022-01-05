@@ -1,6 +1,9 @@
 # zoop-offline-aadhar-android-sdk
 
-## NEW RELEASE(1.1.4)
+## NEW RELEASE(1.1.5)
+1. Few issues resolved regarding theme
+
+## PREVIOUS RELEASE(1.1.4)
 
 1. There is a flag you need pass to remove assist mode from sdk ZOOP_WITHOUT_ASSIST_MODE_ONLY = true
 2. After Opening SDK only without assist mode will be visible to users
@@ -298,7 +301,8 @@ The responses incase of successful transaction as well as response in case of er
     <string name="zoopTimerInstr">waiting for OTP confirmation</string>
     <string name="zoopTimerInstrShare">waiting for OTP confirmation before please enter share code</string>
     <string name="tv_timer_finish">OTP wait time finished</string>
-    
+    <string name="zoopConsentInstrProceed"> By Proceeding button, you\'ll sharing the Aadhaar XML to {Company Name} for the {purpose (Ex. Loan)} post successful       transaction</string>
+
     
  ## 6. RESPONSE FORMAT SENT ON MOBILE  
  
